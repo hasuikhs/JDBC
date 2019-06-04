@@ -10,7 +10,7 @@ import Util.JDBCUtil;
 import vo.BookVO;
 
 public class BookDAO {
-	public List<BookVO> bookList() {
+	public List<BookVO> bookList() { // DB상의 Book객체들을 호출하여 booklist에 집어넣어 배열로서 호출
 		List<BookVO> list = new ArrayList<BookVO>();
 		String sql = "select * from book";
 
@@ -39,7 +39,7 @@ public class BookDAO {
 		return list;
 	}
 
-	public int addBook(BookVO vo) throws Exception{
+	public int addBook(BookVO vo) throws Exception{ // DB에 Book객체 하나의 정보들을 삽입하는 메소드 
 
 		String sql = "insert into book(bookno, title, author, price)\r\n"
 				+ "values((select nvl(max(bookno),0)+1 from book),?,?,?)";
