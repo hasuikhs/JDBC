@@ -1,4 +1,4 @@
-package vo;
+package vo; //Book 객체를 생성하는 BookVO 클래스
 
 public class BookVO { //db scott의 Book 자료를 java의 인스턴스화
 	
